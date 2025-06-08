@@ -1,29 +1,31 @@
+local Len = {}
 
-local Lenguaje = {}
-
-function Lenguaje.mostrar(texto)
+function Len.mostrar(texto)
     print(texto)
 end
 
-function Lenguaje.saltar()
-    local lp = game.Players.LocalPlayer
+function Len.saltar()
+    local Players = game:GetService("Players")
+    local lp = Players.LocalPlayer
+    if not lp then return end
     local char = lp.Character or lp.CharacterAdded:Wait()
+    if not char then return end
     local hum = char:FindFirstChildOfClass("Humanoid")
     if hum then
         hum.Jump = true
     end
 end
 
-function Lenguaje.repetir(veces, bloque)
+function Len.repetir(veces, bloque)
     for _ = 1, veces do
         bloque()
     end
 end
 
-function Lenguaje.Bloque(fn)
+function Len.Bloque(fn)
     return fn
 end
 
-Lenguaje.Fin = function() end
+Len.Fin = function() end
 
-return Lenguaje
+return Len
