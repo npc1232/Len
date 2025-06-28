@@ -9,7 +9,7 @@ end
 
 local mainGui = Instance.new("ScreenGui")
 mainGui.Parent = coreGui
-print("menuqq")
+print("menu")
 
 local function addCorner(instance, radius)
     local corner = Instance.new("UICorner")
@@ -618,7 +618,7 @@ function Library.addButton(container, buttonText, descriptionText, callback)
     local imageLabel = Instance.new("ImageLabel")
     imageLabel.Size = UDim2.new(0, 40, 0, 40)
     imageLabel.Position = UDim2.new(0, 5, 0, (button.Size.Y.Offset - imageLabel.Size.Y.Offset) / 2)
-    imageLabel.Image = "rbxassetid://126481267557196"
+    imageLabel.Image = "rbxassetid://93632936901960"
     imageLabel.BackgroundTransparency = 1
     imageLabel.Parent = button
 
