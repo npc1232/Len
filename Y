@@ -1,4 +1,4 @@
---_7'(7
+-- e
 
 
 
@@ -3443,7 +3443,7 @@ end
 
 local mainGui = Instance.new("ScreenGui")
 mainGui.Parent = coreGui
-print("mengu")
+print("ay mi gatito miau")
 
 local function addCorner(instance, radius)
     local corner = Instance.new("UICorner")
@@ -3453,7 +3453,6 @@ end
 
 local TweenService = game:GetService("TweenService")
 
--- esta es la tabla de colores 
 local redondoContenedor = 6
 local TransparenciaContenedordelElementos = 0.5
 local TamanoContenedor = UDim2.new(1, 0, 0, 45)
@@ -4524,7 +4523,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     Dropdown.BackgroundColor3 = FrameContenedor
     Dropdown.Parent = container
     addCorner(Dropdown, redondoContenedor)
-    Dropdown.ClipsDescendants = true -- Recorta contenido fuera del frame
+    Dropdown.ClipsDescendants = true
 
     local borderStroke = Instance.new("UIStroke")
     borderStroke.Thickness = 2
@@ -4592,7 +4591,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     end
 
     dropdownButton.MouseButton1Click:Connect(function()
-        if dropdownList.Size.Y.Scale > 0 then
+        if dropdownList.Size.Y.Offset > 0 then
             local tween = TweenService:Create(Dropdown, TweenInfo.new(0.25), {Size = UDim2.new(TamanoContenedor.X.Scale, TamanoContenedor.X.Offset, 0, TamanoContenedor.Y.Offset)})
             tween:Play()
             tween.Completed:Wait()
