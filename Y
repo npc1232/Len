@@ -2012,6 +2012,1427 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 local Library = {}
 
 local coreGui = game:GetService("CoreGui")
@@ -2291,56 +3712,64 @@ end)
     border.Color = bordes
     border.Transparency = 0.5
 
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "xdd"
-    screenGui.Parent = coreGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "xdd"
+screenGui.Parent = coreGui
 
-    local button = Instance.new("TextButton")
-    local UICorner = Instance.new("UICorner")
-    local clickSound = Instance.new("Sound")
+local button = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+local clickSound = Instance.new("Sound")
 
-    button.Name = "Button"
-    button.Size = UDim2.new(0, 40, 0, 40)
-    button.Position = UDim2.new(0.14, 0, 0.1, 0)
-    button.Text = ""
-    button.Font = Enum.Font.Gotham
-    button.TextSize = 14
-    button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    button.BackgroundTransparency = 0.7
-    button.Draggable = true
-    button.BorderSizePixel = 0
-    button.BackgroundColor3 = bordes
-    button.Parent = screenGui
-    
-    local borderFrame = Instance.new("Frame")
-    borderFrame.Size = UDim2.new(1, 0, 1, 0)
-    borderFrame.Position = UDim2.new(0, 0, 0, 0)
-    borderFrame.BackgroundTransparency = 1
-    borderFrame.ZIndex = button.ZIndex + 1
-    borderFrame.Parent = button
+button.Name = "Button"
+button.Size = UDim2.new(0, 40, 0, 40)
+button.Position = UDim2.new(0.14, 0, 0.1, 0)
+button.Image = "rbxassetid://80292929493564"
+button.BackgroundTransparency = 0.7
+button.Draggable = true
+button.BorderSizePixel = 0
+button.BackgroundColor3 = bordes
+button.Parent = screenGui
 
-    local borderStroke = Instance.new("UIStroke")
-    borderStroke.Thickness = 2
-    borderStroke.Color = bordecuadro
-    borderStroke.Parent = borderFrame
-    addCorner(borderFrame, redondoContenedor)
- UICorner.CornerRadius = UDim.new(0, 6)
-    UICorner.Parent = button
-    clickSound.SoundId = "rbxassetid://10066968815"
-    clickSound.Parent = button
-    local isActive = true
-    local function toggleButton()
-        isActive = not isActive
-        MainFrame.Visible = isActive
-        clickSound:Play()
-        button:TweenSize(UDim2.new(0, 65, 0, 55), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.2, true)
-        task.wait(0.2)
-        button:TweenSize(UDim2.new(0, 40, 0, 40), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.2, true)
-        button.BackgroundTransparency = 0.3
-        task.wait(2)
-        button.BackgroundTransparency = 0.8
-    end
-    button.MouseButton1Click:Connect(toggleButton)    
+local borderFrame = Instance.new("Frame")
+borderFrame.Size = UDim2.new(1, 0, 1, 0)
+borderFrame.Position = UDim2.new(0, 0, 0, 0)
+borderFrame.BackgroundTransparency = 1
+borderFrame.ZIndex = button.ZIndex + 1
+borderFrame.Parent = button
+
+local borderStroke = Instance.new("UIStroke")
+borderStroke.Thickness = 2
+borderStroke.Color = bordecuadro
+borderStroke.Parent = borderFrame
+addCorner(borderFrame, redondoContenedor)
+
+UICorner.CornerRadius = UDim.new(0, 6)
+UICorner.Parent = button
+
+clickSound.SoundId = "rbxassetid://10066968815"
+clickSound.Parent = button
+
+local isActive = true
+local function toggleButton()
+	isActive = not isActive
+	MainFrame.Visible = isActive
+	clickSound:Play()
+	button:TweenSize(UDim2.new(0, 65, 0, 55), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.2, true)
+	task.wait(0.2)
+	button:TweenSize(UDim2.new(0, 40, 0, 40), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.2, true)
+	button.BackgroundTransparency = 0.3
+	task.wait(2)
+	button.BackgroundTransparency = 0.8
+end
+
+button.MouseButton1Click:Connect(toggleButton)
+
+local UserInputService = game:GetService("UserInputService")
+UserInputService.InputBegan:Connect(function(input, processed)
+	if not processed and input.KeyCode == Enum.KeyCode.LeftControl then
+		toggleButton()
+	end
+end)
 
     local Line = Instance.new("Frame")
     Line.Size = UDim2.new(1, 0, 0, 2)
@@ -3095,6 +4524,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     Dropdown.BackgroundColor3 = FrameContenedor
     Dropdown.Parent = container
     addCorner(Dropdown, redondoContenedor)
+    Dropdown.ClipsDescendants = true -- Recorta contenido fuera del frame
 
     local borderStroke = Instance.new("UIStroke")
     borderStroke.Thickness = 2
@@ -3102,7 +4532,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     borderStroke.Parent = Dropdown
 
     local label = Instance.new("TextLabel")
-    label.Size = UDim2.new(0.3, 0, 1, 0)
+    label.Size = UDim2.new(0.3, 0, 0, 30)
     label.Position = UDim2.new(0, 10, 0, 0)
     label.Text = labelText
     label.Font = Enum.Font.Gotham
@@ -3114,7 +4544,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
 
     local dropdownButton = Instance.new("TextButton")
     dropdownButton.Size = UDim2.new(0.6, 0, 0, 30)
-    dropdownButton.Position = UDim2.new(1, -dropdownButton.Size.X.Offset - 10, 0, 5)
+    dropdownButton.Position = UDim2.new(1, -dropdownButton.Size.X.Offset - 10, 0, 0)
     dropdownButton.AnchorPoint = Vector2.new(1, 0)
     dropdownButton.Text = buttonText
     dropdownButton.Font = Enum.Font.Gotham
@@ -3137,11 +4567,9 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
 
     local dropdownList = Instance.new("Frame")
     dropdownList.Size = UDim2.new(1, 0, 0, 0)
-    dropdownList.Position = UDim2.new(0, 0, 1, 5)
+    dropdownList.Position = UDim2.new(0, 0, 0, 30)
     dropdownList.BackgroundColor3 = ColorContenedordelElementos
     dropdownList.BackgroundTransparency = 0.3
-    dropdownList.ClipsDescendants = true
-    dropdownList.Visible = false
     dropdownList.Parent = Dropdown
     addCorner(dropdownList, 5)
 
@@ -3164,18 +4592,17 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     end
 
     dropdownButton.MouseButton1Click:Connect(function()
-        if dropdownList.Visible then
-            local tween = TweenService:Create(dropdownList, TweenInfo.new(0.25), {Size = UDim2.new(1, 0, 0, 0)})
+        if dropdownList.Size.Y.Scale > 0 then
+            local tween = TweenService:Create(Dropdown, TweenInfo.new(0.25), {Size = UDim2.new(TamanoContenedor.X.Scale, TamanoContenedor.X.Offset, 0, TamanoContenedor.Y.Offset)})
             tween:Play()
             tween.Completed:Wait()
-            dropdownList.Visible = false
+            dropdownList.Size = UDim2.new(1, 0, 0, 0)
             arrow.Text = "˅"
         else
             local newSize = updateDropdownSize()
-            dropdownList.Size = UDim2.new(1, 0, 0, 0)
-            dropdownList.Visible = true
-            local tween = TweenService:Create(dropdownList, TweenInfo.new(0.25), {Size = UDim2.new(1, 0, 0, newSize)})
+            local tween = TweenService:Create(Dropdown, TweenInfo.new(0.25), {Size = UDim2.new(TamanoContenedor.X.Scale, TamanoContenedor.X.Offset, 0, TamanoContenedor.Y.Offset + newSize + 35)})
             tween:Play()
+            dropdownList.Size = UDim2.new(1, 0, 0, newSize)
             arrow.Text = "˄"
         end
     end)
@@ -3208,7 +4635,10 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
 
             button.MouseButton1Click:Connect(function()
                 dropdownButton.Text = option
-                dropdownList.Visible = false
+                local tween = TweenService:Create(Dropdown, TweenInfo.new(0.25), {Size = UDim2.new(TamanoContenedor.X.Scale, TamanoContenedor.X.Offset, 0, TamanoContenedor.Y.Offset)})
+                tween:Play()
+                tween.Completed:Wait()
+                dropdownList.Size = UDim2.new(1, 0, 0, 0)
                 arrow.Text = "˅"
                 if callback then callback(option) end
             end)
