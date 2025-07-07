@@ -1,4 +1,4 @@
--- e
+-- i
 
 
 
@@ -3856,7 +3856,7 @@ end
 
 local Tab = {TabsContainer = TabsContainer, Container = Container}
 
-function Tab:AddTab(requirePremium, imageId, tabName)
+function Tab:AddTab(requirePremium, imageId, tabName, imageColor)
     local tabButton = Instance.new("TextButton")
     tabButton.Size = UDim2.new(1, -10, 0, 40)
     tabButton.Text = ""
@@ -3873,6 +3873,7 @@ function Tab:AddTab(requirePremium, imageId, tabName)
         icon.Position = UDim2.new(0, 8, 0.5, -12)
         icon.BackgroundTransparency = 1
         icon.Image = "rbxassetid://" .. imageId
+        icon.ImageColor3 = imageColor or Color3.fromRGB(255, 255, 255)
         icon.ZIndex = tabButton.ZIndex + 1
         icon.Parent = tabButton
 
@@ -4542,9 +4543,9 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     label.Parent = Dropdown
 
     local dropdownButton = Instance.new("TextButton")
-    dropdownButton.Size = UDim2.new(0.6, 0, 0, 30)
-    dropdownButton.Position = UDim2.new(1, -dropdownButton.Size.X.Offset - 10, 0, 0)
-    dropdownButton.AnchorPoint = Vector2.new(1, 0)
+    dropdownButton.Size = UDim2.new(0, 120, 0, 30)
+    dropdownButton.Position = UDim2.new(1, -130, 0, 0)
+    dropdownButton.AnchorPoint = Vector2.new(0, 0)
     dropdownButton.Text = buttonText
     dropdownButton.Font = Enum.Font.Gotham
     dropdownButton.TextSize = 13
