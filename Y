@@ -1,4 +1,4 @@
--- p
+-- q
 
 
 
@@ -4414,7 +4414,7 @@ function Library.addSlider(container, name, descriptionText, minValue, maxValue,
     sliderLabel.Position = UDim2.new(0, 10, 0, 5)
     sliderLabel.Text = name
     sliderLabel.Font = Enum.Font.Gotham
-    sliderLabel.TextSize = 15
+    sliderLabel.TextSize = 13
     sliderLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     sliderLabel.TextXAlignment = Enum.TextXAlignment.Left
     sliderLabel.BackgroundTransparency = 1
