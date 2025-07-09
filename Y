@@ -1,4 +1,4 @@
--- e
+-- p
 
 
 
@@ -4600,7 +4600,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
             arrow.Text = "˅"
         else
             local newSize = updateDropdownSize()
-            local tween = TweenService:Create(Dropdown, TweenInfo.new(0.25), {Size = UDim2.new(TamanoContenedor.X.Scale, TamanoContenedor.X.Offset, 0, TamanoContenedor.Y.Offset + newSize + 18)})
+            local tween = TweenService:Create(Dropdown, TweenInfo.new(0.25), {Size = UDim2.new(TamanoContenedor.X.Scale, TamanoContenedor.X.Offset, 0, TamanoContenedor.Y.Offset + newSize + 12)})
             tween:Play()
             dropdownList.Size = UDim2.new(1, 0, 0, newSize)
             arrow.Text = "˄"
