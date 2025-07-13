@@ -1,4 +1,4 @@
--- fuc
+-- L
 
 
 
@@ -3458,11 +3458,11 @@ local TransparenciaContenedordelElementos = 0.5
 local TamanoContenedor = UDim2.new(1, 0, 0, 45)
 local TransparenciaContenedor = 0.7
 
-local FrameContenedor = Color3.fromRGB(18, 18, 20)
-local bordes = Color3.fromRGB(60, 40, 42)
-local bordecuadro = Color3.fromRGB(220, 180, 185)
-local main = Color3.fromRGB(245, 220, 225)
-local ColorContenedordelElementos = Color3.fromRGB(35, 20, 22)
+local FrameContenedor = Color3.fromRGB(25, 0, 0)
+local bordes = Color3.fromRGB(150, 30, 45)
+local bordecuadro = Color3.fromRGB(200, 40, 50)
+local main = Color3.fromRGB(235, 64, 52)
+local ColorContenedordelElementos = Color3.fromRGB(255, 102, 102)
 
 local sizeW, sizeH = 590, 300
 
