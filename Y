@@ -8,7 +8,7 @@ end
 
 local mainGui = Instance.new("ScreenGui")
 mainGui.Parent = coreGui
-print("ay mi gatito miau")
+print("casi se unda bolivia xd")
 
 local function addCorner(instance, radius)
     local corner = Instance.new("UICorner")
@@ -35,7 +35,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 local request = http_request or request or syn.request or http.request
-if not request then return warn("Request no disponible.") end
+if not request then return warn("Request is not available") end
 
 local deluxeUrl = "https://raw.githubusercontent.com/CapybaraScript/Deluxe-list/refs/heads/main/Deluxe"
 
@@ -44,23 +44,23 @@ local function getDeluxeList()
         return request({Url = deluxeUrl, Method = "GET"})
     end)
     if not (ok and res and res.Body) then
-        warn("No se pudo obtener la lista deluxe.")
+        warn("Failed to fetch deluxe list")
         return {}
     end
 
     local func, err = loadstring(res.Body)
     if not func then
-        warn("Error cargando la lista deluxe: " .. tostring(err))
+        warn("Failed to load deluxe list: " .. tostring(err))
         return {}
     end
 
     local ok2, list = pcall(func)
     if not ok2 or type(list) ~= "table" then
-        warn("Error ejecutando la lista deluxe.")
+        warn("Failed to execute deluxe list")
         return {}
     end
 
-    print("Lista deluxe obtenida con éxito.")
+    print("Deluxe list loaded successfully")
     return list
 end
 
@@ -410,10 +410,6 @@ padding.Parent = TabsContainer
     addCorner(Container, 5)
 
 local allowedUserIds = getDeluxeList()
-
-print("Contenido completo de la lista deluxe descargada:")
-print(table.concat(allowedUserIds, ", "))
-
 local player = game.Players.LocalPlayer
 
 local function isPlayerDeluxe(plr)
@@ -425,15 +421,15 @@ local function isPlayerDeluxe(plr)
     return false
 end
 
-print("Datos del jugador local:")
-print("Nombre:", player.Name)
+print("Local player data")
+print("Name:", player.Name)
 print("UserId:", player.UserId)
-print("¿Está en la lista deluxe?", isPlayerDeluxe(player) and "Sí" or "No")
+print("Is on the deluxe list?", isPlayerDeluxe(player) and "Yes" or "No")
 
 if isPlayerDeluxe(player) then
-    print(player.Name .. " tiene acceso deluxe.")
+    print(player.Name .. " has deluxe access")
 else
-    print(player.Name .. " no tiene acceso deluxe.")
+    print(player.Name .. " does not have deluxe access")
 end
     
 local Tab = {TabsContainer = TabsContainer, Container = Container}
