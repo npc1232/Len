@@ -1,8 +1,3 @@
-
-
-
-
-
 local Library = {}
 
 local coreGui = game:GetService("CoreGui")
@@ -677,6 +672,15 @@ function Library.addButton(container, buttonText, descriptionText, callback)
     return button, label
 end
 
+function isPlayerDeluxe(player)
+    for _, id in ipairs(getgenv().allowedUserIds or {}) do
+        if player.UserId == id then
+            return true
+        end
+    end
+    return false
+end
+
 function Library.addToggle(container, labelText, descriptionText, defaultState, callback, deluxeOnly)
     local toggleFrame = Instance.new("Frame")
     toggleFrame.Size = TamanoContenedor
@@ -744,7 +748,8 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
 
     local toggleIndicator = Instance.new("Frame")
     toggleIndicator.Size = UDim2.new(0, 15, 0, 15)
-    toggleIndicator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    toggleIndicator.Position = UDim2.new(defaultState and 1 or 0, defaultState and -20 or 2, 0.5, -9)
+    toggleIndicator.BackgroundColor3 = defaultState and Color3.fromRGB(50, 255, 50) or Color3.fromRGB(255, 50, 50)
     toggleIndicator.Parent = toggleButton
     addCorner(toggleIndicator, 6)
 
@@ -769,11 +774,10 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     toggleButton.MouseButton1Click:Connect(function()
         if deluxeOnly and not isPlayerDeluxe(player) then return end
         local s = Instance.new("Sound")
-        s.SoundId = "rbxassetid://99437156604053"
+        s.SoundId = "rbxassetid://9943715660"
         s.Volume = 0.5
-        s.PlayOnRemove = true
         s.Parent = toggleButton
-        s:Destroy()
+        s:Play()
         updateToggle(not state)
     end)
 
