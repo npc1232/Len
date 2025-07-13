@@ -1,3 +1,8 @@
+
+
+
+
+
 local Library = {}
 
 local coreGui = game:GetService("CoreGui")
@@ -8,7 +13,7 @@ end
 
 local mainGui = Instance.new("ScreenGui")
 mainGui.Parent = coreGui
-print("casi se unda bolivia xd")
+print("how long did it take to load?")
 
 local function addCorner(instance, radius)
     local corner = Instance.new("UICorner")
@@ -424,7 +429,7 @@ end
 print("Local player data")
 print("Name:", player.Name)
 print("UserId:", player.UserId)
-print("Is on the deluxe list?", isPlayerDeluxe(player) and "Yes" or "No")
+print("Is on the deluxe list?", isPlayerDeluxe(player) and "Yes!" or "No")
 
 if isPlayerDeluxe(player) then
     print(player.Name .. " has deluxe access")
@@ -672,6 +677,122 @@ function Library.addButton(container, buttonText, descriptionText, callback)
     return button, label
 end
 
+function Library.addToggle(container, labelText, descriptionText, defaultState, callback, deluxeOnly)
+    local toggleFrame = Instance.new("Frame")
+    toggleFrame.Size = TamanoContenedor
+    toggleFrame.BackgroundColor3 = FrameContenedor
+    toggleFrame.Parent = container
+    toggleFrame.BackgroundTransparency = TransparenciaContenedor
+    addCorner(toggleFrame, redondoContenedor)
+
+    local borderFrame = Instance.new("Frame")
+    borderFrame.Size = UDim2.new(1, 0, 1, 0)
+    borderFrame.Position = UDim2.new(0, 0, 0, 0)
+    borderFrame.BackgroundTransparency = 1
+    borderFrame.ZIndex = toggleFrame.ZIndex - 1
+    borderFrame.Parent = toggleFrame
+
+    local borderStroke = Instance.new("UIStroke")
+    borderStroke.Thickness = 2
+    borderStroke.Color = bordecuadro
+    borderStroke.Parent = borderFrame
+    addCorner(borderFrame, redondoContenedor)
+
+    local toggleLabel = Instance.new("TextLabel")
+    toggleLabel.Size = UDim2.new(1, -60, 1, 0)
+    toggleLabel.Position = UDim2.new(0, 10, 0, 0)
+    toggleLabel.Text = labelText
+    toggleLabel.TextSize = 13
+    toggleLabel.Font = Enum.Font.Gotham
+    toggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    toggleLabel.BackgroundTransparency = 1
+    toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+    toggleLabel.Parent = toggleFrame
+
+    if deluxeOnly then
+        local deluxeLabel = Instance.new("TextLabel")
+        deluxeLabel.Size = UDim2.new(0, 50, 0, 15)
+        deluxeLabel.Position = UDim2.new(0, 10 + toggleLabel.TextBounds.X + 10, 0.5, -7)
+        deluxeLabel.Text = "Deluxe"
+        deluxeLabel.TextSize = 11
+        deluxeLabel.Font = Enum.Font.GothamSemibold
+        deluxeLabel.TextColor3 = Color3.fromRGB(255, 140, 0)
+        deluxeLabel.BackgroundTransparency = 1
+        deluxeLabel.Parent = toggleLabel
+    end
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, -10, 0, 24)
+    label.Position = UDim2.new(0, 10, 0, 22)
+    label.Text = descriptionText or ""
+    label.TextSize = 9
+    label.Font = Enum.Font.Gotham
+    label.BackgroundTransparency = 1
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.TextColor3 = Color3.fromRGB(200, 200, 200)
+    label.Parent = toggleFrame
+
+    local toggleButton = Instance.new("TextButton")
+    toggleButton.Size = UDim2.new(0, 45, 0, 25)
+    toggleButton.Position = UDim2.new(1, -70, 0.5, -10)
+    toggleButton.BackgroundTransparency = 0.3
+    toggleButton.BackgroundColor3 = ColorContenedordelElementos
+    toggleButton.Text = ""
+    toggleButton.AutoButtonColor = false
+    toggleButton.Parent = toggleFrame
+    addCorner(toggleButton, 9)
+
+    local toggleIndicator = Instance.new("Frame")
+    toggleIndicator.Size = UDim2.new(0, 15, 0, 15)
+    toggleIndicator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    toggleIndicator.Parent = toggleButton
+    addCorner(toggleIndicator, 6)
+
+    local state = defaultState
+
+    local function updateToggle(newState)
+        state = newState
+        toggleIndicator:TweenPosition(
+            UDim2.new(state and 1 or 0, state and -20 or 2, 0.5, -9),
+            Enum.EasingDirection.Out,
+            Enum.EasingStyle.Quad,
+            0.2,
+            true
+        )
+        toggleIndicator.BackgroundColor3 = state and Color3.fromRGB(50, 255, 50) or Color3.fromRGB(255, 50, 50)
+        if callback then callback(state) end
+    end
+
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer or Players.PlayerAdded:Wait()
+
+    toggleButton.MouseButton1Click:Connect(function()
+        if deluxeOnly and not isPlayerDeluxe(player) then return end
+        local s = Instance.new("Sound")
+        s.SoundId = "rbxassetid://99437156604053"
+        s.Volume = 0.5
+        s.PlayOnRemove = true
+        s.Parent = toggleButton
+        s:Destroy()
+        updateToggle(not state)
+    end)
+
+    updateToggle(defaultState)
+
+    local count = 0
+    for _, child in ipairs(container:GetChildren()) do
+        if child:IsA("Frame") then count = count + 1 end
+    end
+    if count % 4 == 0 then task.wait(0.2) end
+
+    return {
+        Frame = toggleFrame,
+        Label = label,
+        GetState = function() return state end,
+        SetState = function(value) updateToggle(value) end
+    }
+end
+
 function Library.AddColorPicker(container, labelText, defaultColor, callback)
 local ColorPicker = Instance.new("Frame")
 ColorPicker.Size = TamanoContenedor
@@ -843,119 +964,6 @@ addCorner(rainbowButton, 5)
     end)
 
     return ColorPicker
-end
-
-function Library.addToggle(container, labelText, descriptionText, defaultState, callback, premiumOnly)
-    local toggleFrame = Instance.new("Frame")
-    toggleFrame.Size = TamanoContenedor
-    toggleFrame.BackgroundColor3 = FrameContenedor
-    toggleFrame.Parent = container
-    toggleFrame.BackgroundTransparency = TransparenciaContenedor
-    addCorner(toggleFrame, redondoContenedor)
-
-    local borderFrame = Instance.new("Frame")
-    borderFrame.Size = UDim2.new(1, 0, 1, 0)
-    borderFrame.Position = UDim2.new(0, 0, 0, 0)
-    borderFrame.BackgroundTransparency = 1
-    borderFrame.ZIndex = toggleFrame.ZIndex - 1
-    borderFrame.Parent = toggleFrame
-
-    local borderStroke = Instance.new("UIStroke")
-    borderStroke.Thickness = 2
-    borderStroke.Color = bordecuadro
-    borderStroke.Parent = borderFrame
-    addCorner(borderFrame, redondoContenedor)
-
-    local toggleLabel = Instance.new("TextLabel")
-    toggleLabel.Size = UDim2.new(1, -60, 1, 0)
-    toggleLabel.Position = UDim2.new(0, 10, 0, 0)
-    toggleLabel.Text = labelText
-    toggleLabel.TextSize = 13
-    toggleLabel.Font = Enum.Font.Gotham
-    toggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-    toggleLabel.BackgroundTransparency = 1
-    toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
-    toggleLabel.Parent = toggleFrame
-
-    if premiumOnly then
-        local deluxeLabel = Instance.new("TextLabel")
-        deluxeLabel.Size = UDim2.new(0, 50, 0, 15)
-        deluxeLabel.Position = UDim2.new(0, 10 + toggleLabel.TextBounds.X + 10, 0.5, -7)
-        deluxeLabel.Text = "Deluxe"
-        deluxeLabel.TextSize = 11
-        deluxeLabel.Font = Enum.Font.GothamSemibold
-        deluxeLabel.TextColor3 = Color3.fromRGB(255, 140, 0)
-        deluxeLabel.BackgroundTransparency = 1
-        deluxeLabel.Parent = toggleLabel
-    end
-
-    local label = Instance.new("TextLabel")
-    label.Size = UDim2.new(1, -10, 0, 24)
-    label.Position = UDim2.new(0, 10, 0, 22)
-    label.Text = descriptionText or ""
-    label.TextSize = 9
-    label.Font = Enum.Font.Gotham
-    label.BackgroundTransparency = 1
-    label.TextXAlignment = Enum.TextXAlignment.Left
-    label.TextColor3 = Color3.fromRGB(200, 200, 200)
-    label.Parent = toggleFrame
-
-    local toggleButton = Instance.new("TextButton")
-    toggleButton.Size = UDim2.new(0, 45, 0, 25)
-    toggleButton.Position = UDim2.new(1, -70, 0.5, -10)
-    toggleButton.BackgroundTransparency = 0.3
-    toggleButton.BackgroundColor3 = ColorContenedordelElementos
-    toggleButton.Text = ""
-    toggleButton.AutoButtonColor = false
-    toggleButton.Parent = toggleFrame
-    addCorner(toggleButton, 9)
-
-    local toggleIndicator = Instance.new("Frame")
-    toggleIndicator.Size = UDim2.new(0, 15, 0, 15)
-    toggleIndicator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    toggleIndicator.Parent = toggleButton
-    addCorner(toggleIndicator, 6)
-
-    local state = defaultState
-
-    local function updateToggle(newState)
-        state = newState
-        toggleIndicator:TweenPosition(
-            UDim2.new(state and 1 or 0, state and -20 or 2, 0.5, -9),
-            Enum.EasingDirection.Out,
-            Enum.EasingStyle.Quad,
-            0.2,
-            true
-        )
-        toggleIndicator.BackgroundColor3 = state and Color3.fromRGB(50, 255, 50) or Color3.fromRGB(255, 50, 50)
-        if callback then callback(state) end
-    end
-
-    toggleButton.MouseButton1Click:Connect(function()
-        if premiumOnly and not isPlayerPremium(player) then return end
-        local s = Instance.new("Sound")
-        s.SoundId = "rbxassetid://99437156604053"
-        s.Volume = 0.5
-        s.PlayOnRemove = true
-        s.Parent = toggleButton
-        s:Destroy()
-        updateToggle(not state)
-    end)
-
-    updateToggle(defaultState)
-
-    local count = 0
-    for _, child in ipairs(container:GetChildren()) do
-        if child:IsA("Frame") then count = count + 1 end
-    end
-    if count % 4 == 0 then task.wait(0.2) end
-
-    return {
-        Frame = toggleFrame,
-        Label = label,
-        GetState = function() return state end,
-        SetState = function(value) updateToggle(value) end
-    }
 end
 
 function Library.addSlider(container, name, descriptionText, minValue, maxValue, defaultValue, callback)
