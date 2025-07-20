@@ -18,16 +18,16 @@ end
 
 local TweenService = game:GetService("TweenService")
 
-local redondoContenedor = 6
-local TransparenciaContenedordelElementos = 0.5
+local redondoContenedor = 8
+local TransparenciaContenedordelElementos = 0.3
 local TamanoContenedor = UDim2.new(1, 0, 0, 45)
-local TransparenciaContenedor = 0.7
+local TransparenciaContenedor = 0.4
 
-local FrameContenedor = Color3.fromRGB(25, 0, 0)
-local bordes = Color3.fromRGB(150, 30, 45)
-local bordecuadro = Color3.fromRGB(200, 40, 50)
-local main = Color3.fromRGB(235, 64, 52)
-local ColorContenedordelElementos = Color3.fromRGB(255, 102, 102)
+local FrameContenedor = Color3.fromRGB(255, 237, 186)
+local bordes = Color3.fromRGB(255, 178, 102)
+local bordecuadro = Color3.fromRGB(255, 105, 97)
+local main = Color3.fromRGB(255, 153, 102)
+local ColorContenedordelElementos = Color3.fromRGB(102, 204, 255)
 
 local sizeW, sizeH = 590, 300
 
@@ -294,7 +294,7 @@ local clickSound = Instance.new("Sound")
 
 button.Name = "Button"
 button.Size = UDim2.new(0, 40, 0, 40)
-button.Position = UDim2.new(0.14, 0, 0.1, 0)
+button.Position = UDim2.new(0.14, -64, 0.1, 34)
 button.Image = "rbxassetid://80292929493564"
 button.BackgroundTransparency = 0.7
 button.Draggable = true
