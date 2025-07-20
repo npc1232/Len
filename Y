@@ -1,3 +1,7 @@
+
+
+
+
 local Library = {}
 
 local coreGui = game:GetService("CoreGui")
@@ -23,11 +27,12 @@ local TransparenciaContenedordelElementos = 0.3
 local TamanoContenedor = UDim2.new(1, 0, 0, 45)
 local TransparenciaContenedor = 0.4
 
-local FrameContenedor = Color3.fromRGB(255, 237, 186)
-local bordes = Color3.fromRGB(255, 178, 102)
-local bordecuadro = Color3.fromRGB(255, 105, 97)
-local main = Color3.fromRGB(255, 153, 102)
-local ColorContenedordelElementos = Color3.fromRGB(102, 204, 255)
+local FrameContenedor = Color3.fromRGB(235, 170, 100)
+local bordes = Color3.fromRGB(220, 100, 80)
+local bordecuadro = Color3.fromRGB(200, 70, 70)
+local main = Color3.fromRGB(240, 110, 70)
+local ColorContenedordelElementos = Color3.fromRGB(60, 150, 190)
+local textcolor = Color3.fromRGB(255, 85, 85)
 
 local sizeW, sizeH = 590, 300
 
@@ -105,7 +110,7 @@ ResizeButton.BackgroundColor3 = ColorContenedordelElementos
 ResizeButton.Text = ""
 ResizeButton.TextSize = 14
 ResizeButton.Font = Enum.Font.Code
-ResizeButton.TextColor3 = Color3.fromRGB(200, 200, 200)
+ResizeButton.TextColor3 = textcolor
 ResizeButton.BorderSizePixel = 0
 ResizeButton.AutoButtonColor = false
 
@@ -165,7 +170,7 @@ addCorner(confirmationFrame, 7)
 local confirmationLabel = Instance.new("TextLabel")
 confirmationLabel.Text = "Settings on the menu"
 confirmationLabel.TextSize = 12
-confirmationLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+confirmationLabel.TextColor3 = textcolor
 confirmationLabel.BackgroundTransparency = 1
 confirmationLabel.Size = UDim2.new(1, 0, 0, 30)
 confirmationLabel.ZIndex = 20
@@ -188,7 +193,7 @@ DestroyGUIButton.BackgroundColor3 = bordecuadro
 DestroyGUIButton.Text = "X"
 DestroyGUIButton.ZIndex = 30
 DestroyGUIButton.TextSize = 23
-DestroyGUIButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+DestroyGUIButton.TextColor3 = textcolor
 DestroyGUIButton.Font = Enum.Font.SourceSans
 DestroyGUIButton.Parent = TopBar
 
@@ -228,7 +233,7 @@ addCorner(ConfirmationWindow, 7)
 local ConfirmationText = Instance.new("TextLabel")
 ConfirmationText.Text = "Are you sure you want to Destroy the GUI?"
 ConfirmationText.TextSize = 10
-ConfirmationText.TextColor3 = Color3.fromRGB(255, 255, 255)
+ConfirmationText.TextColor3 = textcolor
 ConfirmationText.BackgroundTransparency = 1
 ConfirmationText.Size = UDim2.new(1, 0, 0, 50)
 ConfirmationText.ZIndex = 20
@@ -238,7 +243,7 @@ local ConfirmDestroyButton = Instance.new("TextButton")
 ConfirmDestroyButton.Text = "Yeah"
 ConfirmDestroyButton.ZIndex = 20
 ConfirmDestroyButton.TextSize = 16
-ConfirmDestroyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ConfirmDestroyButton.TextColor3 = textcolor
 ConfirmDestroyButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
 ConfirmDestroyButton.Size = UDim2.new(0.5, -10, 0, 40)
 ConfirmDestroyButton.Position = UDim2.new(0, 5, 1, -45)
@@ -249,7 +254,7 @@ local CancelDestroyButton = Instance.new("TextButton")
 CancelDestroyButton.Text = "No"
 CancelDestroyButton.TextSize = 16
 CancelDestroyButton.ZIndex = 20
-CancelDestroyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CancelDestroyButton.TextColor3 = textcolor
 CancelDestroyButton.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
 CancelDestroyButton.Size = UDim2.new(0.5, -10, 0, 40)
 CancelDestroyButton.Position = UDim2.new(0.5, 5, 1, -45)
@@ -358,7 +363,7 @@ end)
     TitleLabel.Text = title
     TitleLabel.ZIndex = 11
     TitleLabel.TextSize = 16
-    TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TitleLabel.TextColor3 = textcolor
     TitleLabel.Font = Enum.Font.SourceSans
     TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
     TitleLabel.Parent = TopBar
@@ -370,7 +375,7 @@ end)
     DescriptionLabel.Text = description
     DescriptionLabel.TextSize = 14
     DescriptionLabel.ZIndex = 11
-    DescriptionLabel.TextColor3 = Color3.fromRGB(255, 255, 255) 
+    DescriptionLabel.TextColor3 = textcolor 
     DescriptionLabel.Font = Enum.Font.SourceSans
     DescriptionLabel.TextXAlignment = Enum.TextXAlignment.Left
     DescriptionLabel.Parent = TopBar
@@ -441,7 +446,7 @@ function Tab:AddTab(requireDeluxe, imageId, tabName, imageColor)
     tabButton.Font = Enum.Font.Gotham
     tabButton.TextSize = 15
     tabButton.BackgroundColor3 = main
-    tabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    tabButton.TextColor3 = textcolor
     tabButton.BackgroundTransparency = TransparenciaContenedor
     tabButton.Parent = self.TabsContainer
 
@@ -451,7 +456,7 @@ function Tab:AddTab(requireDeluxe, imageId, tabName, imageColor)
         icon.Position = UDim2.new(0, 8, 0.5, -12)
         icon.BackgroundTransparency = 1
         icon.Image = "rbxassetid://" .. imageId
-        icon.ImageColor3 = imageColor or Color3.fromRGB(255, 255, 255)
+        icon.ImageColor3 = imageColor or textcolor
         icon.ZIndex = tabButton.ZIndex + 1
         icon.Parent = tabButton
 
@@ -460,7 +465,7 @@ function Tab:AddTab(requireDeluxe, imageId, tabName, imageColor)
         texto.Position = UDim2.new(0, 36, 0, 0)
         texto.BackgroundTransparency = 1
         texto.Text = tabName
-        texto.TextColor3 = Color3.fromRGB(255, 255, 255)
+        texto.TextColor3 = textcolor
         texto.Font = Enum.Font.Gotham
         texto.TextSize = 15
         texto.TextXAlignment = Enum.TextXAlignment.Left
@@ -608,7 +613,7 @@ function Library.addButton(container, buttonText, descriptionText, callback)
     button.BackgroundTransparency = TransparenciaContenedor
     button.Font = Enum.Font.Gotham
     button.BackgroundColor3 = FrameContenedor
-    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.TextColor3 = textcolor
     button.Parent = container
     addCorner(button, redondoContenedor)
 
@@ -632,7 +637,7 @@ function Library.addButton(container, buttonText, descriptionText, callback)
     label.TextSize = 9
     label.Font = Enum.Font.Gotham
     label.BackgroundTransparency = 1
-    label.TextColor3 = Color3.fromRGB(200, 200, 200)
+    label.TextColor3 = textcolor
     label.Parent = button
 
     local imageLabel = Instance.new("ImageLabel")
@@ -644,7 +649,7 @@ function Library.addButton(container, buttonText, descriptionText, callback)
 
     local tweenService = game:GetService("TweenService")
     local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0)
-    local goal = {BackgroundColor3 = Color3.fromRGB(200, 200, 200)}
+    local goal = {BackgroundColor3 = textcolor}
 
     local originalColor = button.BackgroundColor3
 
@@ -708,7 +713,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     toggleLabel.Text = labelText
     toggleLabel.TextSize = 13
     toggleLabel.Font = Enum.Font.Gotham
-    toggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    toggleLabel.TextColor3 = textcolor
     toggleLabel.BackgroundTransparency = 1
     toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
     toggleLabel.Parent = toggleFrame
@@ -733,7 +738,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     label.Font = Enum.Font.Gotham
     label.BackgroundTransparency = 1
     label.TextXAlignment = Enum.TextXAlignment.Left
-    label.TextColor3 = Color3.fromRGB(200, 200, 200)
+    label.TextColor3 = textcolor
     label.Parent = toggleFrame
 
     local toggleButton = Instance.new("TextButton")
@@ -822,7 +827,7 @@ local label = Instance.new("TextLabel")
 label.Size = UDim2.new(0.3, 0, 1, 0)
 label.Text = labelText
 label.Position = UDim2.new(0, 10, 0, 0)
-label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextColor3 = textcolor
 label.BackgroundTransparency = 1
 label.TextXAlignment = Enum.TextXAlignment.Left
 label.Font = Enum.Font.Gotham
@@ -867,7 +872,7 @@ colorWheel.Parent = colorPickerPopup
 
 local colorSelector = Instance.new("Frame")
 colorSelector.Size = UDim2.new(0, 10, 0, 10)
-colorSelector.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+colorSelector.BackgroundColor3 = textcolor
 colorSelector.BorderSizePixel = 2
 colorSelector.Parent = colorWheel
 addCorner(colorSelector, 5)
@@ -878,7 +883,7 @@ confirmButton.Position = UDim2.new(0, 5, 1, -40)
 confirmButton.Text = "Confirm"
 confirmButton.Font = Enum.Font.Gotham
 confirmButton.TextSize = 14
-confirmButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+confirmButton.TextColor3 = textcolor
 confirmButton.BackgroundColor3 = ColorContenedordelElementos
 confirmButton.BorderSizePixel = 0
 confirmButton.Parent = colorPickerPopup
@@ -890,7 +895,7 @@ rainbowButton.Position = UDim2.new(0.5, 0, 1, -40)
 rainbowButton.Text = "Rainbow"
 rainbowButton.Font = Enum.Font.Gotham
 rainbowButton.TextSize = 14
-rainbowButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+rainbowButton.TextColor3 = textcolor
 rainbowButton.BackgroundColor3 = ColorContenedordelElementos
 rainbowButton.BorderSizePixel = 0
 rainbowButton.Parent = colorPickerPopup
@@ -990,7 +995,7 @@ function Library.addSlider(container, name, descriptionText, minValue, maxValue,
     sliderLabel.Text = name
     sliderLabel.Font = Enum.Font.Gotham
     sliderLabel.TextSize = 13
-    sliderLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    sliderLabel.TextColor3 = textcolor
     sliderLabel.TextXAlignment = Enum.TextXAlignment.Left
     sliderLabel.BackgroundTransparency = 1
     sliderLabel.Parent = sliderFrame
@@ -1001,7 +1006,7 @@ function Library.addSlider(container, name, descriptionText, minValue, maxValue,
     sliderTextBox.Text = tostring(defaultValue)
     sliderTextBox.Font = Enum.Font.Gotham
     sliderTextBox.TextSize = 18
-    sliderTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    sliderTextBox.TextColor3 = textcolor
     sliderTextBox.TextXAlignment = Enum.TextXAlignment.Center
     sliderTextBox.BackgroundColor3 = ColorContenedordelElementos
     sliderTextBox.BackgroundTransparency = TransparenciaContenedordelElementos
@@ -1017,7 +1022,7 @@ label.TextSize = 9
 label.Font = Enum.Font.Gotham
 label.BackgroundTransparency = 1
 label.TextXAlignment = Enum.TextXAlignment.Left
-label.TextColor3 = Color3.fromRGB(200, 200, 200)
+label.TextColor3 = textcolor
 label.Parent = sliderFrame
 
     local sliderTrack = Instance.new("Frame")
@@ -1041,7 +1046,7 @@ label.Parent = sliderFrame
     local sliderThumb = Instance.new("Frame")
     sliderThumb.Size = UDim2.new(0, 12, 0, 12)
     sliderThumb.AnchorPoint = Vector2.new(0.5, 0.5)
-    sliderThumb.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    sliderThumb.BackgroundColor3 = textcolor
     sliderThumb.Position = UDim2.new(0, 0, 0.5, 0)
     sliderThumb.ZIndex = 2
     sliderThumb.Parent = sliderTrack
@@ -1112,7 +1117,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     label.Text = labelText
     label.Font = Enum.Font.Gotham
     label.TextSize = 13
-    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.TextColor3 = textcolor
     label.BackgroundTransparency = 1
     label.TextXAlignment = Enum.TextXAlignment.Left
     label.Parent = Dropdown
@@ -1124,7 +1129,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     dropdownButton.Text = buttonText
     dropdownButton.Font = Enum.Font.Gotham
     dropdownButton.TextSize = 13
-    dropdownButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    dropdownButton.TextColor3 = textcolor
     dropdownButton.BackgroundColor3 = ColorContenedordelElementos
     dropdownButton.BackgroundTransparency = TransparenciaContenedordelElementos
     dropdownButton.Parent = Dropdown
@@ -1137,7 +1142,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
     arrow.Text = "˅"
     arrow.Font = Enum.Font.Gotham
     arrow.TextSize = 14
-    arrow.TextColor3 = Color3.fromRGB(255, 255, 255)
+    arrow.TextColor3 = textcolor
     arrow.Parent = dropdownButton
 
     local dropdownList = Instance.new("Frame")
@@ -1195,7 +1200,7 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
             button.Text = option
             button.Font = Enum.Font.Gotham
             button.TextSize = 14
-            button.TextColor3 = Color3.fromRGB(255, 255, 255)
+            button.TextColor3 = textcolor
             button.BackgroundColor3 = ColorContenedordelElementos
             button.BackgroundTransparency = TransparenciaContenedordelElementos
             button.Parent = scrollFrame
@@ -1258,7 +1263,7 @@ label.Text = labelText
 label.TextSize = 13
 label.Font = Enum.Font.Gotham
 label.TextXAlignment = Enum.TextXAlignment.Left
-label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextColor3 = textcolor
 label.BackgroundTransparency = 1
 label.Parent = textboxFrame
 
@@ -1273,12 +1278,12 @@ textBox.TextSize = 14
 textBox.ClearTextOnFocus = false
 textBox.TextWrapped = true
 textBox.BackgroundTransparency = TransparenciaContenedordelElementos
-textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+textBox.TextColor3 = textcolor
 textBox.BackgroundColor3 = Color3.fromRGB(0, 180, 0)
 textBox.Parent = textboxFrame
 
 textBox.BackgroundColor3 = ColorContenedordelElementos
-textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+textBox.TextColor3 = textcolor
 textboxFrame.BackgroundColor3 = FrameContenedor
 addCorner(textBox, 5)
 
@@ -1302,7 +1307,7 @@ function Library.addParagraph(container, text)
     paragraphLabel.TextWrapped = true
     paragraphLabel.TextScaled = false
     paragraphLabel.TextSize = 13
-    paragraphLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    paragraphLabel.TextColor3 = textcolor
     paragraphLabel.BackgroundTransparency = 1
     paragraphLabel.TextXAlignment = Enum.TextXAlignment.Left
     paragraphLabel.TextYAlignment = Enum.TextYAlignment.Top
@@ -1321,7 +1326,7 @@ addCorner(section, 5)
     sectionLabel.Size = UDim2.new(0, 200, 1, 0)
     sectionLabel.Position = UDim2.new(0.5, -100, 0, 0)
     sectionLabel.Text = title or "Section"
-    sectionLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    sectionLabel.TextColor3 = textcolor
     sectionLabel.Font = Enum.Font.GothamBold
     sectionLabel.TextSize = 13
     sectionLabel.BackgroundTransparency = 1
@@ -1342,7 +1347,7 @@ function Library.addLabel(container, text)
     label.Text = text
     label.Font = Enum.Font.GothamBold
     label.TextSize = 12
-    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.TextColor3 = textcolor
     label.BackgroundTransparency = 1
     label.Parent = labelFrame
     
@@ -1386,13 +1391,13 @@ addCorner(borderFrame, redondoContenedor)
 	local KeybindTitle = Instance.new("TextLabel")
 	KeybindTitle.Name = "KeybindTitle"
 	KeybindTitle.Parent = KeybindFrame
-	KeybindTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	KeybindTitle.BackgroundColor3 = textcolor
 	KeybindTitle.BackgroundTransparency = 1
 	KeybindTitle.Position = UDim2.new(0, 15, 0, 0)
 	KeybindTitle.Size = UDim2.new(0, 300, 0, 45)
 	KeybindTitle.Font = Enum.Font.Gotham
 	KeybindTitle.Text = text
-	KeybindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	KeybindTitle.TextColor3 = textcolor
 	KeybindTitle.TextSize = 13
 	KeybindTitle.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1406,7 +1411,7 @@ KeybindButton.Position = UDim2.new(1, -10, 0, 5)
 	KeybindButton.Font = Enum.Font.Gotham
 	KeybindButton.Text = defaultKey.Name
 	KeybindButton.BackgroundTransparency = TransparenciaContenedordelElementos
-	KeybindButton.TextColor3 = Color3.fromRGB(225, 225, 225)
+	KeybindButton.TextColor3 = textcolor
 	KeybindButton.TextSize = 13
 	addCorner(KeybindButton, 5)
 
