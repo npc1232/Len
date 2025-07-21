@@ -28,7 +28,7 @@ local bordes = Color3.fromRGB(220, 100, 80)
 local bordecuadro = Color3.fromRGB(200, 70, 70)
 local main = Color3.fromRGB(240, 110, 70)
 local ColorContenedordelElementos = Color3.fromRGB(60, 150, 190)
-local textcolor = Color3.fromRGB(255, 85, 85)
+local textcolor = Color3.fromRGB(0, 0, 255)
 
 local sizeW, sizeH = 590, 300
 
