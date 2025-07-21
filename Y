@@ -1,7 +1,3 @@
-
-
-
-
 local Library = {}
 
 local coreGui = game:GetService("CoreGui")
@@ -23,16 +19,16 @@ end
 local TweenService = game:GetService("TweenService")
 
 local redondoContenedor = 8
-local TransparenciaContenedordelElementos = 0.1
+local TransparenciaContenedordelElementos = 0.3
 local TamanoContenedor = UDim2.new(1, 0, 0, 45)
-local TransparenciaContenedor = 0.15
+local TransparenciaContenedor = 0.4
 
-local FrameContenedor = Color3.fromRGB(255, 140, 60)
-local bordes = Color3.fromRGB(255, 90, 90)
-local bordecuadro = Color3.fromRGB(255, 60, 60)
-local main = Color3.fromRGB(255, 110, 80)
-local ColorContenedordelElementos = Color3.fromRGB(30, 144, 255)
-local textcolor = Color3.fromRGB(255, 255, 255)
+local FrameContenedor = Color3.fromRGB(235, 170, 100)
+local bordes = Color3.fromRGB(220, 100, 80)
+local bordecuadro = Color3.fromRGB(200, 70, 70)
+local main = Color3.fromRGB(240, 110, 70)
+local ColorContenedordelElementos = Color3.fromRGB(60, 150, 190)
+local textcolor = Color3.fromRGB(255, 85, 85)
 
 local sizeW, sizeH = 590, 300
 
@@ -686,7 +682,7 @@ function isPlayerDeluxe(player)
     return false
 end
 
-function Library.addToggle(container, labelText, descriptionText, defaultState, callback, deluxeOnly)
+function Library.addToggle(container, labelText, descriptionText, defaultState, callback, premiumOnly)
     local toggleFrame = Instance.new("Frame")
     toggleFrame.Size = TamanoContenedor
     toggleFrame.BackgroundColor3 = FrameContenedor
@@ -718,7 +714,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
     toggleLabel.Parent = toggleFrame
 
-    if deluxeOnly then
+    if premiumOnly then
         local deluxeLabel = Instance.new("TextLabel")
         deluxeLabel.Size = UDim2.new(0, 50, 0, 15)
         deluxeLabel.Position = UDim2.new(0, 10 + toggleLabel.TextBounds.X + 10, 0.5, -7)
@@ -753,53 +749,60 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
 
     local toggleIndicator = Instance.new("Frame")
     toggleIndicator.Size = UDim2.new(0, 15, 0, 15)
-    toggleIndicator.Position = UDim2.new(defaultState and 1 or 0, defaultState and -20 or 2, 0.5, -9)
-    toggleIndicator.BackgroundColor3 = defaultState and Color3.fromRGB(50, 255, 50) or Color3.fromRGB(255, 50, 50)
+    toggleIndicator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     toggleIndicator.Parent = toggleButton
     addCorner(toggleIndicator, 6)
 
-    local state = defaultState
-
-    local function updateToggle(newState)
-        state = newState
-        toggleIndicator:TweenPosition(
-            UDim2.new(state and 1 or 0, state and -20 or 2, 0.5, -9),
-            Enum.EasingDirection.Out,
-            Enum.EasingStyle.Quad,
-            0.2,
-            true
-        )
-        toggleIndicator.BackgroundColor3 = state and Color3.fromRGB(50, 255, 50) or Color3.fromRGB(255, 50, 50)
-        if callback then callback(state) end
+    local function updateToggle(state)
+        if not toggleIndicator:IsDescendantOf(game) then
+            toggleIndicator.AncestryChanged:Wait()
+        end
+        task.defer(function()
+            if toggleIndicator:IsDescendantOf(game) then
+                pcall(function()
+                    toggleIndicator:TweenPosition(
+                        UDim2.new(state and 1 or 0, state and -20 or 2, 0.5, -9),
+                        Enum.EasingDirection.Out,
+                        Enum.EasingStyle.Quad,
+                        0.2,
+                        true
+                    )
+                    toggleIndicator.BackgroundColor3 = state and Color3.fromRGB(50, 255, 50) or Color3.fromRGB(255, 50, 50)
+                end)
+            end
+        end)
+        pcall(function()
+            callback(state)
+        end)
     end
 
-    local Players = game:GetService("Players")
-    local player = Players.LocalPlayer or Players.PlayerAdded:Wait()
-
     toggleButton.MouseButton1Click:Connect(function()
-        if deluxeOnly and not isPlayerDeluxe(player) then return end
-        local s = Instance.new("Sound")
-        s.SoundId = "rbxassetid://9943715660"
-        s.Volume = 0.5
-        s.Parent = toggleButton
-        s:Play()
-        updateToggle(not state)
+        if premiumOnly and not isPlayerPremium(player) then
+            return
+        end
+        local sonido = Instance.new("Sound")
+        sonido.SoundId = "rbxassetid://99437156604053"
+        sonido.Volume = 0.5
+        sonido.PlayOnRemove = true
+        sonido.Parent = toggleButton
+        sonido:Destroy()
+        defaultState = not defaultState
+        updateToggle(defaultState)
     end)
 
     updateToggle(defaultState)
 
     local count = 0
     for _, child in ipairs(container:GetChildren()) do
-        if child:IsA("Frame") then count = count + 1 end
+        if child:IsA("Frame") then
+            count = count + 1
+        end
     end
-    if count % 4 == 0 then task.wait(0.2) end
+    if count % 4 == 0 then
+        task.wait(0.2)
+    end
 
-    return {
-        Frame = toggleFrame,
-        Label = label,
-        GetState = function() return state end,
-        SetState = function(value) updateToggle(value) end
-    }
+    return toggleFrame, label
 end
 
 function Library.AddColorPicker(container, labelText, defaultColor, callback)
