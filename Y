@@ -1,8 +1,4 @@
 
-
-
-
-
 local Library = {}
 
 local coreGui = game:GetService("CoreGui")
