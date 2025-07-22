@@ -691,6 +691,15 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     local Players = game:GetService("Players")
     local player = Players.LocalPlayer
 
+    local function isPlayerDeluxe(plr)
+        for _, id in ipairs(getgenv().allowedUserIds or {}) do
+            if plr.UserId == id then
+                return true
+            end
+        end
+        return false
+    end
+
     local toggleFrame = Instance.new("Frame")
     toggleFrame.Size = TamanoContenedor
     toggleFrame.BackgroundColor3 = FrameContenedor
@@ -785,7 +794,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     end
 
     toggleButton.MouseButton1Click:Connect(function()
-        if premiumOnly and player.MembershipType ~= Enum.MembershipType.Premium then
+        if premiumOnly and not isPlayerDeluxe(player) then
             return
         end
         local sonido = Instance.new("Sound")
