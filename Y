@@ -683,6 +683,9 @@ function isPlayerDeluxe(player)
 end
 
 function Library.addToggle(container, labelText, descriptionText, defaultState, callback, premiumOnly)
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
+
     local toggleFrame = Instance.new("Frame")
     toggleFrame.Size = TamanoContenedor
     toggleFrame.BackgroundColor3 = FrameContenedor
@@ -709,7 +712,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     toggleLabel.Text = labelText
     toggleLabel.TextSize = 13
     toggleLabel.Font = Enum.Font.Gotham
-    toggleLabel.TextColor3 = textcolor
+    toggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     toggleLabel.BackgroundTransparency = 1
     toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
     toggleLabel.Parent = toggleFrame
@@ -734,7 +737,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     label.Font = Enum.Font.Gotham
     label.BackgroundTransparency = 1
     label.TextXAlignment = Enum.TextXAlignment.Left
-    label.TextColor3 = textcolor
+    label.TextColor3 = Color3.fromRGB(200, 200, 200)
     label.Parent = toggleFrame
 
     local toggleButton = Instance.new("TextButton")
@@ -777,7 +780,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     end
 
     toggleButton.MouseButton1Click:Connect(function()
-        if premiumOnly and not isPlayerPremium(player) then
+        if premiumOnly and player.MembershipType ~= Enum.MembershipType.Premium then
             return
         end
         local sonido = Instance.new("Sound")
