@@ -24,12 +24,12 @@ local TransparenciaContenedordelElementos = 0.3
 local TamanoContenedor = UDim2.new(1, 0, 0, 45)
 local TransparenciaContenedor = 0.4
 
-local FrameContenedor = Color3.fromRGB(235, 170, 100)
-local bordes = Color3.fromRGB(220, 100, 80)
-local bordecuadro = Color3.fromRGB(200, 70, 70)
-local main = Color3.fromRGB(240, 110, 70)
-local ColorContenedordelElementos = Color3.fromRGB(60, 150, 190)
-local textcolor = Color3.fromRGB(0, 0, 255)
+local FrameContenedor = Color3.fromRGB(255, 180, 70) -- amarillo tostado
+local bordes = Color3.fromRGB(255, 130, 40) -- naranja quemado
+local bordecuadro = Color3.fromRGB(220, 60, 30) -- rojo fuerte
+local main = Color3.fromRGB(255, 100, 50) -- rojo-naranja principal
+local ColorContenedordelElementos = Color3.fromRGB(255, 170, 80) -- naranja claro
+local textcolor = Color3.fromRGB(80, 20, 0) -- marrón oscuro para contraste y calor visual
 
 local sizeW, sizeH = 590, 300
 
@@ -85,7 +85,7 @@ MainFrame.BorderSizePixel = 0
 MainFrame.Parent = ScreenGui
 MainFrame.Active = true
 MainFrame.Draggable = true
-MainFrame.BackgroundTransparency = 0.8
+MainFrame.BackgroundTransparency = 0.6
 addCorner(MainFrame, 7)
 
     local TopBar = Instance.new("Frame")
@@ -722,7 +722,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     toggleLabel.Text = labelText
     toggleLabel.TextSize = 13
     toggleLabel.Font = Enum.Font.Gotham
-    toggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    toggleLabel.TextColor3 = textcolor
     toggleLabel.BackgroundTransparency = 1
     toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
     toggleLabel.Parent = toggleFrame
