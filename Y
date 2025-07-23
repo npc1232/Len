@@ -297,7 +297,7 @@ local clickSound = Instance.new("Sound")
 button.Name = "Button"
 button.Size = UDim2.new(0, 40, 0, 40)
 button.Position = UDim2.new(0.14, -64, 0.1, 34)
-button.Image = "rbxassetid://80292929493564"
+button.Image = "rbxthumb://type=Asset&id=93060775454762&w=150&h=150"
 button.BackgroundTransparency = 0.7
 button.Draggable = true
 button.BorderSizePixel = 0
