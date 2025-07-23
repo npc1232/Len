@@ -1,8 +1,8 @@
 
-local Library = {}
+local module = {}
 
 local coreGui = game:GetService("CoreGui")
-local existingGui = coreGui:FindFirstChild("xdd")
+local existingGui = coreGui:FindFirstChild("FoundationOverlay")
 if existingGui then
     existingGui:Destroy()
 end
@@ -68,7 +68,7 @@ end
 
 local allowedUserIds = getDeluxeList()
 
-function Library:CreateUI(title, description, allowedUserIds)
+function module:CreateUI(title, description, allowedUserIds)
     self.allowedUserIds = allowedUserIds or {}
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Parent = game:GetService("CoreGui")
@@ -287,7 +287,7 @@ end)
     border.Transparency = 0.5
 
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "xdd"
+screenGui.Name = "FoundationOverlay"
 screenGui.Parent = coreGui
 
 local button = Instance.new("ImageButton")
@@ -602,7 +602,7 @@ end
 return Tab
 end
 
-function Library.addButton(container, buttonText, descriptionText, callback)
+function module.addButton(container, buttonText, descriptionText, callback)
     local button = Instance.new("TextButton")
     button.Size = TamanoContenedor
     button.Text = buttonText
@@ -683,7 +683,7 @@ function isPlayerDeluxe(player)
     return false
 end
 
-function Library.addToggle(container, labelText, descriptionText, defaultState, callback, premiumOnly)
+function module.addToggle(container, labelText, descriptionText, defaultState, callback, premiumOnly)
     local Players = game:GetService("Players")
     local player = Players.LocalPlayer
 
@@ -818,7 +818,7 @@ function Library.addToggle(container, labelText, descriptionText, defaultState, 
     return toggleFrame, label
 end
 
-function Library.AddColorPicker(container, labelText, defaultColor, callback)
+function module.AddColorPicker(container, labelText, defaultColor, callback)
 local ColorPicker = Instance.new("Frame")
 ColorPicker.Size = TamanoContenedor
 ColorPicker.BackgroundColor3 = FrameContenedor
@@ -991,7 +991,7 @@ addCorner(rainbowButton, 5)
     return ColorPicker
 end
 
-function Library.addSlider(container, name, descriptionText, minValue, maxValue, defaultValue, callback)
+function module.addSlider(container, name, descriptionText, minValue, maxValue, defaultValue, callback)
     local sliderFrame = Instance.new("Frame")
     sliderFrame.Size = TamanoContenedor
     sliderFrame.BackgroundColor3 = FrameContenedor
@@ -1113,7 +1113,7 @@ end
 
 local TweenService = game:GetService("TweenService")
 
-function Library.addDropdown(container, labelText, buttonText, options, callback)
+function module.addDropdown(container, labelText, buttonText, options, callback)
     local Dropdown = Instance.new("Frame")
     Dropdown.Size = TamanoContenedor
     Dropdown.BackgroundTransparency = TransparenciaContenedor
@@ -1245,14 +1245,14 @@ function Library.addDropdown(container, labelText, buttonText, options, callback
 
     createDropdownOptions(options)
 
-    function Library.updateDropdownOptions(newOptions)
+    function module.updateDropdownOptions(newOptions)
         createDropdownOptions(newOptions)
     end
 
     updateDropdownSize()
 end
 
-function Library.addTextbox(container, labelText, placeholderText, defaultText, callback)
+function module.addTextbox(container, labelText, placeholderText, defaultText, callback)
 local textboxFrame = Instance.new("Frame")
 textboxFrame.Size = TamanoContenedor
 textboxFrame.BackgroundTransparency = TransparenciaContenedor
@@ -1310,7 +1310,7 @@ textBox.FocusLost:Connect(function(enterPressed)
     end)
 end
 
-function Library.addParagraph(container, text)
+function module.addParagraph(container, text)
     local paragraphFrame = Instance.new("Frame")
     paragraphFrame.Size = TamanoContenedor
     paragraphFrame.BackgroundTransparency = 1
@@ -1330,7 +1330,7 @@ function Library.addParagraph(container, text)
     paragraphLabel.Parent = paragraphFrame
 end
 
-function Library.addSection(container, title)
+function module.addSection(container, title)
 local section = Instance.new("Frame")
 section.Size = UDim2.new(1, 0, 0, 36)
 section.BackgroundTransparency = 0.4
@@ -1350,7 +1350,7 @@ addCorner(section, 5)
     sectionLabel.Parent = section
 end
 
-function Library.addLabel(container, text)
+function module.addLabel(container, text)
     local labelFrame = Instance.new("Frame")
     labelFrame.Size = TamanoContenedor
     labelFrame.BackgroundColor3 = FrameContenedor
@@ -1382,7 +1382,7 @@ function Library.addLabel(container, text)
     return labelObject 
 end
 
-function Library.AddKeybind(container, text, defaultKey, callback)
+function module.AddKeybind(container, text, defaultKey, callback)
 	local KeybindFrame = Instance.new("Frame")
 	KeybindFrame.Name = "KeybindFrame"
 	KeybindFrame.Parent = container
@@ -1448,4 +1448,4 @@ KeybindButton.Position = UDim2.new(1, -10, 0, 5)
 	end)
 end
 
-return Library
+return module
